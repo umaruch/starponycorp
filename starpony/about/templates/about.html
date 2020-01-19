@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>StarPony News</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class='main-container'>
+            <div class="up-main-container">
+                <img class="logo" src="{% static 'img/logo.png' %}"/>
+                <p class="intro-text">
+                    Официальный сайт StarPony Productions, делаем все дабы разрушить мировой порядок и погрузить весь мир в хаос.
+                </p>
+                <ul class="menu-items">
+                    <li class="menu-item">
+                        <a class="item-link" href="{% url 'articles' %}">Новости</a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="item-link" href="{% url 'projects' %}">Проекты</a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="item-link" style="font-size: 140%; color: #000;" href="{% url 'about' %}">О нас</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="labmems">
+                <h3 class="labmem">Команда нашего корабля</h3>
+                <p class="labmem">Некошерный - признанный лидер и глава организации</p>
+                <p class="labmem">Хванадаль - старпом и революционер</p>
+                <p class="labmem">Шманина Алла - пряник и стажер</p>
+                <p class="labmem">Маомаки - стационарный художник</p>
+            </div>
+        </div>
+        <footer>
+            <div>
+                <a href="#toppage">К верху страницы</a>
+                <span>StarPony Productions</span>
+                <span>&copy; 2036</span>
+            </div>
+        </footer>
+    </body>
+</html>

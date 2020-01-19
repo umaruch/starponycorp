@@ -1,0 +1,130 @@
+body{
+    background-color:white;
+}
+
+.logo{
+    width: 30%;
+    height: 20%;
+    display: block;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+.intro-text{
+    display: block;
+    margin: auto;
+    font-size: 120%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.menu-items{
+    text-align: center;
+}
+
+.menu-item{
+    display: inline-block;
+    text-align: center;
+    width: 20%;
+}
+
+.item-link{
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #777;
+
+}
+
+
+.menu-item:hover{
+    background-color: darkgrey;
+    border-radius: 5em;
+}
+
+
+.main-container{
+    margin: auto;
+    width: 75%;
+    padding-bottom: 5em;
+}
+
+.blocks{
+    margin: auto;
+    margin-bottom: 5em;
+    padding-bottom: 3em;
+}
+
+.art-img{
+    height: 20em;
+    width: 20em;
+    float: left;
+    margin-right: 2em;
+    margin-bottom: 3em;
+}
+
+.article{
+    display: block;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    clear: both;
+}
+
+.date{
+    font-family: sans-serif;
+}
+
+.text{
+    display: block;
+}
+
+.author{
+    display: block;
+    font-weight: bolder;
+}
+
+.pagination{
+    display: block;
+    width: 100%;
+    background-color: darkgray;
+    margin: auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    border-radius: 1em;
+}
+
+.page-current{
+    font-weight: bold;
+}
+
+.page-change{
+    text-decoration: none;
+    color: black;
+}
+
+.page-change:hover{
+    background-color: dimgrey;
+    border-radius: 1em;
+}
+
+.labmems{
+    display: block;
+    margin: auto;
+    padding-bottom: 4em;
+}
+
+.labmem{
+    display: block;
+    text-align: center;
+}
+
+footer{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: #38404b;
+    color: #bcc9dd;
+    text-align: center;
+}
