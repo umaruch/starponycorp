@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+	<head>
+		<title>StarPony Информация</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link href="{% static 'css/normalize.css' %}" rel="stylesheet">
+		<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	</head>
+
+    <body>
+
+        <header>
+            <div class="container">
+
+                <img class="logo" src="{% static 'img/logo.png' %}" alt="Лого конторы"/>
+                
+                <ul class="menu">
+                    <li><a href="{% url 'articles' %}">Новости</a></li>
+                    <li><a href="{% url 'projects' %}">Проекты</a></li>
+                    <li><a href="{% url 'about' %}" style="color:lightsalmon">О нас</a></li>
+                    {% if user.is_authenticated %}  
+                    <li style="text-align: center;">
+                        <a href="{% url 'admin:index' %}" style="color: forestgreen;">{{ user.get_username }}</a>
+                        <a href="{% url 'logout' %}?next={{request.path}}" style="color: brown;">Выйти</a>
+                    </li>
+                    {% else %}
+                    <li><a href="{% url 'login' %}" style="color: forestgreen;">Войти</a></li>
+                    {% endif %}
+                </ul>
+
+            </div>
+        </header>
+
+        <div class="blog" style="background-image: url({% static 'img/background.png' %}); background-size: cover;">
+
+            <div class="container">
+
+                <h2>О нас</h2>  
+
+                <div class="post" id="labmems">
+                    <h3 class="labmem">Наша цель:</h3>
+                    <p class="labmem" style="font-size: 16px; font-style: italic;">Разрушить мировой порядок и привнести во вселенную хаос</p>
+                <h3 class="labmem">Команда нашего корабля</h3>
+                <p class="labmem">Некошерный - признанный лидер и глава организации</p>
+                <p class="labmem">Хваннадаль - старпом и революционер</p>
+                <p class="labmem">Шманина Алла - пряник и стажер</p>
+                <p class="labmem">Маомаки - стационарный художник</p>
+                </div>
+            </div>
+
+        </div>
+        <footer>
+            <div class="container">
+                <div class="brand">StarPony Productions</div>
+                <p class="copyright">© 2036 All Rights Reserved</p>
+            </div>
+        </footer>
+    </body>
+</html>

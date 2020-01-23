@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+	<head>
+		<title>StarPony Проекты</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link href="{% static 'css/normalize.css' %}" rel="stylesheet">
+		<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	</head>
+
+    <body>
+
+        <header>
+            <div class="container">
+
+                <img class="logo" src="{% static 'img/logo.png' %}" alt="Лого конторы"/>
+                
+                <ul class="menu">
+                    <li><a href="{% url 'articles' %}">Новости</a></li>
+                    <li><a href="{% url 'projects' %}" style="color:lightsalmon">Проекты</a></li>
+                    <li><a href="{% url 'about' %}">О нас</a></li>
+                    {% if user.is_authenticated %}  
+                    <li style="text-align: center;">
+                        <a href="{% url 'admin:index' %}" style="color: forestgreen;">{{ user.get_username }}</a>
+                        <a href="{% url 'logout' %}?next={{request.path}}" style="color: brown;">Выйти</a>
+                    </li>
+                    {% else %}
+                    <li><a href="{% url 'login' %}" style="color: forestgreen;">Войти</a></li>
+                    {% endif %}
+                </ul>
+
+            </div>
+        </header>
+
+        <div class="blog" style="background-image: url({% static 'img/background.png' %}); background-size: cover;">
+            <div class="container">
+
+                <h2>Проекты</h2>  
+
+                {% if model %}
+                {% for m in model %}
+                <div class="post">
+                    <img src="{{ m.image.url }}" alt="">
+                    <h3>{{ m.title }}</h3>
+                    <p class="date">{{ m.date }}</p>
+                    <p>{{ m.text }}</p>
+                    <p>{{ m.author }}</p>
+                    <p>Состояние проекта:{{ m.status }}</p>
+                    <a href="{{ m.fil.url }}">Файл</a>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="post">
+                    <h3 style="text-align: center;">Местные посты поглотила пустота</h3>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <div class="brand">StarPony Productions</div>
+                <p class="copyright">© 2036 All Rights Reserved</p>
+            </div>
+        </footer>
+
+    </body>
+</html>

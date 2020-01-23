@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>StarPony Вход</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link href="{% static 'css/normalize.css' %}" rel="stylesheet">
+        <link href="{% static 'css/login_style.css' %}" rel="stylesheet">
+    </head>
+
+    <body style="background-image: url({% static 'img/background.png' %}); background-size: cover; ">
+        <div >
+            <h3>Выход</h3>
+            <p>Вы успешно вышли</p>
+            <a href="{% url 'articles' %}">Вернуться на главную страницу</a><br>
+            <a href="{% url 'login' %}">Войти снова</a>
+
+        </div >
+    </body>
+</html>
